@@ -103,7 +103,7 @@ checkpublicrepo = function(id)
 	local suc, req = pcall(function() return requestfunc({
 		Url = "https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/CustomModules/"..id..".lua",
 		Method = "GET"
-	}) end)
+		}) end)
 	if not suc then
 		checkpublicreponum = checkpublicreponum + 1
 		spawn(function()
@@ -836,8 +836,8 @@ onething.Visible = true onetext.Position = UDim2.new(0, 0, 0, 41)
 local sortingmethod = "Alphabetical"
 local textwithoutthing = ""
 local function getSpaces(str)
-		local strSize = game:GetService("TextService"):GetTextSize(str, onetext.TextSize, onetext.TextSize, Vector2.new(10000, 10000))
-		return math.ceil(strSize.X / 3)
+	local strSize = game:GetService("TextService"):GetTextSize(str, onetext.TextSize, onetext.TextSize, Vector2.new(10000, 10000))
+	return math.ceil(strSize.X / 3)
 end
 local function UpdateHud()
 	if GuiLibrary["MainGui"].ScaledGui.Visible then
@@ -845,7 +845,7 @@ local function UpdateHud()
 		local text2 = ""
 		local tableofmodules = {}
 		local first = true
-		
+
 		for i,v in pairs(GuiLibrary["ObjectsThatCanBeSaved"]) do
 			if v["Type"] == "OptionsButton" and v["Api"]["Name"] ~= "Text GUI" then
 				if v["Api"]["Enabled"] then
@@ -1295,7 +1295,7 @@ GuiLibrary["UpdateUI"] = function()
 		--onething.ImageColor3 = Color3.fromHSV(GuiLibrary["Settings"]["GUIObject"]["Color"], maincolor, 1)
 		local rainbowcolor2 = GuiLibrary["Settings"]["GUIObject"]["Color"] + (GuiLibrary["ObjectsThatCanBeSaved"]["Gui ColorSliderColor"]["Api"]["RainbowValue"] and (-0.05) or 0)
 		rainbowcolor2 = rainbowcolor2 % 1
-        local gradsat = textguigradient["Enabled"] and getSaturation(rainbowcolor2) or maincolor
+		local gradsat = textguigradient["Enabled"] and getSaturation(rainbowcolor2) or maincolor
 		onethinggrad.Color = ColorSequence.new({
 			ColorSequenceKeypoint.new(0, Color3.fromHSV(GuiLibrary["Settings"]["GUIObject"]["Color"], maincolor, 1)),
 			ColorSequenceKeypoint.new(1, Color3.fromHSV(textguigradient["Enabled"] and rainbowcolor2 or GuiLibrary["Settings"]["GUIObject"]["Color"], gradsat, 1))
@@ -1379,7 +1379,7 @@ GuiLibrary["UpdateUI"] = function()
 				end
 			end
 			if (v["Type"] == "Toggle" or v["Type"] == "ToggleMain") and v["Api"]["Enabled"] then
-					v["Object"].ToggleFrame1.BackgroundColor3 = Color3.fromHSV(GuiLibrary["Settings"]["GUIObject"]["Color"], maincolor, 1)
+				v["Object"].ToggleFrame1.BackgroundColor3 = Color3.fromHSV(GuiLibrary["Settings"]["GUIObject"]["Color"], maincolor, 1)
 			end
 			if v["Type"] == "Slider" or v["Type"] == "SliderMain" then
 				v["Object"].Slider.FillSlider.BackgroundColor3 = Color3.fromHSV(GuiLibrary["Settings"]["GUIObject"]["Color"], maincolor, 1)
@@ -1395,20 +1395,20 @@ GuiLibrary["UpdateUI"] = function()
 		rainbowcolor = rainbowcolor % 1
 		GuiLibrary["ObjectsThatCanBeSaved"]["GUIWindow"]["Object"].Children.Extras.MainButton.ImageColor3 = (GUI["GetVisibleIcons"]() > 0 and Color3.fromHSV(rainbowcolor, getSaturation(rainbowcolor), 1) or Color3.fromRGB(199, 199, 199))
 		for i3, v3 in pairs(ProfilesTextList["ScrollingObject"].ScrollingFrame:GetChildren()) do
-		--	pcall(function()
-				if v3:IsA("TextButton") and v3.ItemText.Text == GuiLibrary["CurrentProfile"] then
-					v3.BackgroundColor3 = Color3.fromHSV(GuiLibrary["Settings"]["GUIObject"]["Color"], maincolor, 1)
-					v3.ImageButton.BackgroundColor3 = Color3.fromHSV(GuiLibrary["Settings"]["GUIObject"]["Color"], maincolor, 1)
-					v3.ItemText.TextColor3 = Color3.new(1, 1, 1)
-					v3.ItemText.TextStrokeTransparency = 0.75
-				end
-		--	end)
+			--	pcall(function()
+			if v3:IsA("TextButton") and v3.ItemText.Text == GuiLibrary["CurrentProfile"] then
+				v3.BackgroundColor3 = Color3.fromHSV(GuiLibrary["Settings"]["GUIObject"]["Color"], maincolor, 1)
+				v3.ImageButton.BackgroundColor3 = Color3.fromHSV(GuiLibrary["Settings"]["GUIObject"]["Color"], maincolor, 1)
+				v3.ItemText.TextColor3 = Color3.new(1, 1, 1)
+				v3.ItemText.TextStrokeTransparency = 0.75
+			end
+			--	end)
 		end
 	end)
 end
 
 GUISettings.CreateToggle({
-	["Name"] = "Blur Background", 
+	["Name"] = "Blur da Background", 
 	["Function"] = function(callback) 
 		GuiLibrary["MainBlur"].Size = (callback and 25 or 0) 
 		game:GetService("RunService"):SetRobloxGuiFocused(GuiLibrary["MainGui"].ScaledGui.ClickGui.Visible and callback) 
@@ -1423,7 +1423,7 @@ local welcomemsg = GUISettings.CreateToggle({
 	["HoverText"] = 'Displays a message indicating your GUI keybind upon injecting.\nI.E "Press RIGHTSHIFT to open GUI"'
 })
 GUISettings.CreateToggle({
-	["Name"] = "Old Rainbow", 
+	["Name"] = " The Old Rainbow", 
 	["Function"] = function(callback) oldrainbow = callback end,
 	["HoverText"] = "Reverts to old rainbow"
 })
@@ -1479,7 +1479,7 @@ GUISettings.CreateSlider({
 local GUIbind = GUI.CreateGUIBind()
 
 local teleportfunc = game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
-    if State == Enum.TeleportState.Started and not shared.VapeIndependent then
+	if State == Enum.TeleportState.Started and not shared.VapeIndependent then
 		local teleportstr = 'shared.VapeSwitchServers = true if shared.VapeDeveloper then loadstring(readfile("vape/NewMainScript.lua"))() else loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))() end'
 		if shared.VapeDeveloper then
 			teleportstr = 'shared.VapeDeveloper = true '..teleportstr
@@ -1492,7 +1492,7 @@ local teleportfunc = game:GetService("Players").LocalPlayer.OnTeleport:Connect(f
 		end
 		GuiLibrary["SaveSettings"]()
 		queueteleport(teleportstr)
-    end
+	end
 end)
 
 GuiLibrary["SelfDestruct"] = function()
@@ -1564,6 +1564,7 @@ GUISettings.CreateButton2({
 			["RenderWindow"] = 4,
 			["UtilityWindow"] = 5,
 			["WorldWindow"] = 6,
+			["CustomWindow"] = 6,
 			["FriendsWindow"] = 7,
 			["ProfilesWindow"] = 8,
 			["Text GUICustomWindow"] = 9,
