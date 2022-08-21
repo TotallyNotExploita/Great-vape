@@ -1252,7 +1252,8 @@ local tabsortorder = {
 	["UtilityButton"] = 4,
 	["WorldButton"] = 5,
 	["FriendsButton"] = 6,
-	["ProfilesButton"] = 7
+	["CustomButton"] = 7,
+	["ProfilesButton"] = 8
 }
 
 local tabsortorder2 = {
@@ -1260,7 +1261,8 @@ local tabsortorder2 = {
 	[2] = "Blatant",
 	[3] = "Render",
 	[4] = "Utility",
-	[5] = "World"
+	[5] = "World",
+	[6] = "Custom"
 }
 
 local tabcategorycolor = {
@@ -1268,7 +1270,8 @@ local tabcategorycolor = {
 	["BlatantWindow"] = Color3.fromRGB(219, 21, 133),
 	["RenderWindow"] = Color3.fromRGB(135, 14, 165),
 	["UtilityWindow"] = Color3.fromRGB(27, 145, 68),
-	["WorldWindow"] = Color3.fromRGB(70, 73, 16)
+	["WorldWindow"] = Color3.fromRGB(70, 73, 16),
+	["CustomWindow"] = Color3.fromRGB(45, 15, 37)
 }
 
 local function getSaturation(val)
