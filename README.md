@@ -193,6 +193,11 @@ local World = GuiLibrary.CreateWindow({
 	["Icon"] = "vape/assets/WorldIcon.png", 
 	["IconSize"] = 16
 })
+local Custom = GuiLibrary.CreateWindow({
+	["Name"] = "Custom", 
+	["Icon"] = "vape/assets/CustomIcon.png", 
+	["IconSize"] = 16
+})
 local Friends = GuiLibrary.CreateWindow2({
 	["Name"] = "Friends", 
 	["Icon"] = "vape/assets/FriendsIcon.png", 
@@ -232,6 +237,13 @@ GUI.CreateButton({
 	["Name"] = "World", 
 	["Function"] = function(callback) World.SetVisible(callback) end, 
 	["Icon"] = "vape/assets/WorldIcon.png", 
+	["IconSize"] = 16
+})
+})
+GUI.CreateButton({
+	["Name"] = "Custom", 
+	["Function"] = function(callback) World.SetVisible(callback) end, 
+	["Icon"] = "vape/assets/CustomIcon.png", 
 	["IconSize"] = 16
 })
 GUI.CreateDivider("MISC")
@@ -957,7 +969,7 @@ TextGui.CreateDropdown({
 textguiscaleslider = TextGui.CreateSlider({
 	["Name"] = "Scale",
 	["Min"] = 1,
-	["Max"] = 50,
+	["Max"] = 500,
 	["Default"] = 10,
 	["Function"] = function(val)
 		onescale.Scale = val / 10
