@@ -193,11 +193,6 @@ local World = GuiLibrary.CreateWindow({
 	["Icon"] = "vape/assets/WorldIcon.png", 
 	["IconSize"] = 16
 })
-local Custom = GuiLibrary.CreateWindow({
-	["Name"] = "Custom", 
-	["Icon"] = "vape/assets/CustomIcon.png", 
-	["IconSize"] = 16
-})
 local Friends = GuiLibrary.CreateWindow2({
 	["Name"] = "Friends", 
 	["Icon"] = "vape/assets/FriendsIcon.png", 
@@ -237,13 +232,6 @@ GUI.CreateButton({
 	["Name"] = "World", 
 	["Function"] = function(callback) World.SetVisible(callback) end, 
 	["Icon"] = "vape/assets/WorldIcon.png", 
-	["IconSize"] = 16
-})
-})
-GUI.CreateButton({
-	["Name"] = "Custom", 
-	["Function"] = function(callback) World.SetVisible(callback) end, 
-	["Icon"] = "vape/assets/CustomIcon.png", 
 	["IconSize"] = 16
 })
 GUI.CreateDivider("MISC")
@@ -969,7 +957,7 @@ TextGui.CreateDropdown({
 textguiscaleslider = TextGui.CreateSlider({
 	["Name"] = "Scale",
 	["Min"] = 1,
-	["Max"] = 500,
+	["Max"] = 50,
 	["Default"] = 10,
 	["Function"] = function(val)
 		onescale.Scale = val / 10
@@ -1264,8 +1252,7 @@ local tabsortorder = {
 	["UtilityButton"] = 4,
 	["WorldButton"] = 5,
 	["FriendsButton"] = 6,
-	["CustomButton"] = 7,
-	["ProfilesButton"] = 8
+	["ProfilesButton"] = 7
 }
 
 local tabsortorder2 = {
@@ -1273,8 +1260,7 @@ local tabsortorder2 = {
 	[2] = "Blatant",
 	[3] = "Render",
 	[4] = "Utility",
-	[5] = "World",
-	[6] = "Custom"
+	[5] = "World"
 }
 
 local tabcategorycolor = {
@@ -1282,8 +1268,7 @@ local tabcategorycolor = {
 	["BlatantWindow"] = Color3.fromRGB(219, 21, 133),
 	["RenderWindow"] = Color3.fromRGB(135, 14, 165),
 	["UtilityWindow"] = Color3.fromRGB(27, 145, 68),
-	["WorldWindow"] = Color3.fromRGB(70, 73, 16),
-	["CustomWindow"] = Color3.fromRGB(45, 15, 37)
+	["WorldWindow"] = Color3.fromRGB(70, 73, 16)
 }
 
 local function getSaturation(val)
@@ -1423,7 +1408,7 @@ GuiLibrary["UpdateUI"] = function()
 end
 
 GUISettings.CreateToggle({
-	["Name"] = "Blur da Background", 
+	["Name"] = "Blur  da Background", 
 	["Function"] = function(callback) 
 		GuiLibrary["MainBlur"].Size = (callback and 25 or 0) 
 		game:GetService("RunService"):SetRobloxGuiFocused(GuiLibrary["MainGui"].ScaledGui.ClickGui.Visible and callback) 
@@ -1579,7 +1564,6 @@ GUISettings.CreateButton2({
 			["RenderWindow"] = 4,
 			["UtilityWindow"] = 5,
 			["WorldWindow"] = 6,
-			["CustomWindow"] = 6,
 			["FriendsWindow"] = 7,
 			["ProfilesWindow"] = 8,
 			["Text GUICustomWindow"] = 9,
