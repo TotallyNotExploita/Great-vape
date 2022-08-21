@@ -1471,7 +1471,7 @@ GUISettings.CreateSlider({
 	["Function"] = function(val)
 		GuiLibrary["RainbowSpeed"] = math.clamp((val / 10) - 0.4, 0, 1000000000)
 	end,
-	["Min"] = 0.1,
+	["Min"] = 1,
 	["Max"] = 1000,
 	["Default"] = 10
 })
@@ -1481,7 +1481,7 @@ local GUIbind = GUI.CreateGUIBind()
 local teleportfunc = game:GetService("Players").LocalPlayer.OnTeleport:Connect(function(State)
 	if State == Enum.TeleportState.Started and not shared.VapeIndependent then
 		local teleportstr = 'shared.VapeSwitchServers = true if shared.VapeDeveloper then loadstring(readfile("vape/NewMainScript.lua"))() else loadstring(game:HttpGet("https://raw.githubusercontent.com/7GrandDadPGN/VapeV4ForRoblox/main/NewMainScript.lua", true))() end'
-		if shared.VapeDeveloper then
+		if shared.VapeDeveloper then 
 			teleportstr = 'shared.VapeDeveloper = true '..teleportstr
 		end
 		if shared.VapePrivate then
@@ -1616,7 +1616,7 @@ if shared.VapeIndependent then
 		if not shared.VapeSwitchServers then
 			if blatantmode["Enabled"] then
 				pcall(function()
-					local frame = GuiLibrary["CreateNotification"]("Blatant Enabled", "Vape is now in  The Blatant Mode of Nebula Community lol.", 5.5, "assets/WarningNotification.png")
+					local frame = GuiLibrary["CreateNotification"]("Blatant Enabled", "Vape is now in da Blatant Mode.", 5.5, "assets/WarningNotification.png")
 					frame.Frame.Frame.ImageColor3 = Color3.fromRGB(236, 129, 44)
 				end)
 			end
@@ -1678,5 +1678,4 @@ else
 
 	coroutine.resume(selfdestructsave)
 	shared.VapeFullyLoaded = true
-	end
 end
