@@ -1408,7 +1408,7 @@ GuiLibrary["UpdateUI"] = function()
 end
 
 GUISettings.CreateToggle({
-	["Name"] = "Blur  da Background", 
+	["Name"] = "Blur Background", 
 	["Function"] = function(callback) 
 		GuiLibrary["MainBlur"].Size = (callback and 25 or 0) 
 		game:GetService("RunService"):SetRobloxGuiFocused(GuiLibrary["MainGui"].ScaledGui.ClickGui.Visible and callback) 
@@ -1423,7 +1423,7 @@ local welcomemsg = GUISettings.CreateToggle({
 	["HoverText"] = 'Displays a message indicating your GUI keybind upon injecting.\nI.E "Press RIGHTSHIFT to open GUI"'
 })
 GUISettings.CreateToggle({
-	["Name"] = " The Old Rainbow", 
+	["Name"] = "Old Rainbow", 
 	["Function"] = function(callback) oldrainbow = callback end,
 	["HoverText"] = "Reverts to old rainbow"
 })
@@ -1678,4 +1678,5 @@ else
 
 	coroutine.resume(selfdestructsave)
 	shared.VapeFullyLoaded = true
+	end
 end
