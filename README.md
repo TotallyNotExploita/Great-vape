@@ -214,7 +214,7 @@ GUI.CreateButton({
 	["Name"] = "Blatant", 
 	["Function"] = function(callback) Blatant.SetVisible(callback) end, 
 	["Icon"] = "vape/assets/BlatantIcon.png", 
-	["IconSize"] = 30
+	["IconSize"] = 16
 })
 GUI.CreateButton({
 	["Name"] = "Render", 
@@ -1471,8 +1471,8 @@ GUISettings.CreateSlider({
 	["Function"] = function(val)
 		GuiLibrary["RainbowSpeed"] = math.clamp((val / 10) - 0.4, 0, 1000000000)
 	end,
-	["Min"] = 1,
-	["Max"] = 200,
+	["Min"] = 0.1,
+	["Max"] = 1000,
 	["Default"] = 10
 })
 
@@ -1616,7 +1616,7 @@ if shared.VapeIndependent then
 		if not shared.VapeSwitchServers then
 			if blatantmode["Enabled"] then
 				pcall(function()
-					local frame = GuiLibrary["CreateNotification"]("Blatant Enabled", "Vape is now in Blatant Mode.", 5.5, "assets/WarningNotification.png")
+					local frame = GuiLibrary["CreateNotification"]("Blatant Enabled", "Vape is now in  The Blatant Mode of Nebula Community lol.", 5.5, "assets/WarningNotification.png")
 					frame.Frame.Frame.ImageColor3 = Color3.fromRGB(236, 129, 44)
 				end)
 			end
